@@ -19,6 +19,8 @@ import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+// 31번, (호윤님코드기준 38, 39번줄 삭제), 38번, 55 ~ 79번줄, 153 ~ 155번, (호윤님코드 기준144번줄 삭제), (호윤님코드 기준 149 ~ 162번줄 삭제), (호윤님코드 기준 169번 삭제), (호윤님코드 기준 179 ~ 202번줄 삭제), 170 ~ 174번줄, (호윤님코드 기준 225 ~ 236번줄 , 239번줄 삭제), (호윤님코드 기준 242 ~ 252번 줄을 197 ~ 206번줄로 교체), (호윤님코드기준 301 ~ 353번줄을 255~ 324번줄로 교체)
+
 public class CardGame extends GameContainer {
 
 	ImageIcon backIcon = new ImageIcon("images/background.png");
@@ -30,8 +32,6 @@ public class CardGame extends GameContainer {
 	JLabel Title; // 횟수 보여주기
 	JLabel gameBack; // 흰색 배경
 	JLabel back; // 초록 배경
-	LineBorder bb = new LineBorder(Color.black, 2, true); // 상단 라벨 테두리 맞추는 용도
-	EmptyBorder eb = new EmptyBorder(0, 0, 0, 0);
 	JPanel cardBack; // 카드 넣는 패널
 	JLabel startCardBack;
 	JLabel checkLabel;
@@ -167,7 +167,6 @@ public class CardGame extends GameContainer {
 		startCardBack.setBounds(250, 170, 510, 450);
 
 		// 시작하기 버튼
-
 		bottomBtn01.setBorderPainted(false);
 		bottomBtn01.setContentAreaFilled(false);
 		bottomBtn01.setBackground(Color.orange);

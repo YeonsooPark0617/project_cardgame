@@ -19,8 +19,8 @@ public class MyJFrame extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		contentPan = getContentPane();
 		
-//		contentPan.add(new CardGame());
-		contentPan.add(new CupGame());
+		contentPan.add(new CardGame());
+//		contentPan.add(new CupGame());
 	}
 
 	public static void main(String[] args) {
