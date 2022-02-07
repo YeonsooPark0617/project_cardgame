@@ -1,20 +1,25 @@
 package project;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
+
+// 14번, 16번, 22번줄 추가, 83~85번줄 추가
 public class CupThread extends Thread {
 	Cup cup1;
 	Cup cup2;
 	Cup cup3;
 	int r;
 	JLabel manualJLabel;
+	JButton[] cBtn = new JButton[3];
 
-	public CupThread(Cup cup1, Cup cup2, Cup cup3, int r, JLabel manualJLabel) {
+	public CupThread(Cup cup1, Cup cup2, Cup cup3, int r, JLabel manualJLabel, JButton[] cBtn) {
 		this.cup1 = cup1;
 		this.cup2 = cup2;
 		this.cup3 = cup3;
 		this.r = r;
 		this.manualJLabel = manualJLabel;
+		this.cBtn = cBtn;
 	}
 
 	@Override
@@ -75,6 +80,9 @@ public class CupThread extends Thread {
 
 			if (roop == 8) {
 				manualJLabel.setVisible(true);
+				for(int j=0; j<3; j++) {
+					cBtn[j].setEnabled(true);
+				}
 				break;
 			}
 			if (i < 181) {
