@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-// 26번, 32번, 53번 ~ 69번, 85~88번, 96, 97번, (호윤님코드기준 87~91번줄 삭제), 130번, 280번, 285~289번줄, 기존 actionPerformed 294~328번줄로 교체 
+// 26번, 32번, 51번 ~ 69번, 85~88번, 96, 97번, (호윤님코드기준 87~91번줄 삭제), 112번, 130 ~ 135번 , 280번, 285~289번줄, 기존 actionPerformed 294~328번줄로 교체 
 
 
 public class CupGame extends GameContainer {
@@ -48,6 +48,7 @@ public class CupGame extends GameContainer {
 	boolean flag;
 
 	public CupGame() {
+		backLabel = new JLabel(backIcon);
 
 		// 컵 생성
 		for (int i = 0; i < cups.length; i++) {
@@ -58,7 +59,7 @@ public class CupGame extends GameContainer {
 			cups[i].setEnabled(false);
 			cups[i].setBorderPainted(false); // 버튼 외곽 없애기
 			cups[i].setContentAreaFilled(false);
-			this.add(cups[i]);
+			backLabel.add(cups[i]);
 		}
 
 		playBtn = new RoundJButton("시작하기");
@@ -108,7 +109,7 @@ public class CupGame extends GameContainer {
 		// 공 생성
 		for (int i = 0; i < balls.length; i++) {
 			balls[i] = new JLabel(ballIcon);
-			this.add(balls[i]);
+			backLabel.add(balls[i]);
 			if (!(i == 1)) {
 				balls[i].setVisible(false);
 			}
@@ -124,15 +125,14 @@ public class CupGame extends GameContainer {
 		gameBackLabel.setBounds(130, 60, 750, 580);
 
 		// 초록 배경
-		backLabel = new JLabel(backIcon);
 		backLabel.setBounds(0, 0, 1024, 768);
 
-		this.add(manualLabel);
-		this.add(xLabel);
-		this.add(checkLabel);
-		this.add(pauseBtn);
-		this.add(playBtn);
-		this.add(gameBackLabel);
+		backLabel.add(manualLabel);
+		backLabel.add(xLabel);
+		backLabel.add(checkLabel);
+		backLabel.add(pauseBtn);
+		backLabel.add(playBtn);
+		backLabel.add(gameBackLabel);
 		this.add(backLabel);
 	}
 
