@@ -86,7 +86,7 @@ public class CupGame extends GameContainer {
 		manualLabel = new JLabel("공이 들어있는 컵을 선택하세요");
 		manualLabel.setBounds(230, 150, 550, 50);
 		manualLabel.setHorizontalAlignment(JLabel.CENTER);
-		manualLabel.setFont(new Font("맑은고딕", Font.BOLD, 25));
+		manualLabel.setFont(new Font("맑은 고딕", Font.BOLD, 25));
 
 		pauseBtn.setBounds(920, 30, 50, 50);
 		pauseBtn.setBorderPainted(false);
@@ -95,7 +95,7 @@ public class CupGame extends GameContainer {
 		// 시작하기 버튼		
 		playBtn.setBounds(430, 480, 150, 50);
 		playBtn.setBackground(Color.ORANGE);
-		playBtn.setFont(new Font("맑은고딕", Font.BOLD, 20));
+		playBtn.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 
 		cups[0].x = 230;
 		cups[1].x = 430;

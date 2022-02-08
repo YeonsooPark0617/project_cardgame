@@ -19,7 +19,7 @@ import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-// 31번, (호윤님코드기준 38, 39번줄 삭제), 38번, 55 ~ 79번줄, 153 ~ 155번, (호윤님코드 기준144번줄 삭제), (호윤님코드 기준 149 ~ 162번줄 삭제), (호윤님코드 기준 169번 삭제), (호윤님코드 기준 179 ~ 202번줄 삭제), 170 ~ 174번줄, (호윤님코드 기준 225 ~ 236번줄 , 239번줄 삭제), (호윤님코드 기준 242 ~ 252번 줄을 197 ~ 206번줄로 교체), (호윤님코드기준 301 ~ 353번줄을 255~ 324번줄로 교체)
+// 31번, (호윤님코드기준 38, 39번줄 삭제), 38번, 54번, 55 ~ 79번줄, 153 ~ 155번, (호윤님코드 기준144번줄 삭제), (호윤님코드 기준 149 ~ 162번줄 삭제), (호윤님코드 기준 169번 삭제), (호윤님코드 기준 179 ~ 202번줄 삭제), 170 ~ 174번줄, (호윤님코드 기준 225 ~ 236번줄 , 239번줄 삭제), (호윤님코드 기준 242 ~ 252번 줄을 197 ~ 206번줄로 교체), (호윤님코드기준 301 ~ 353번줄을 255~ 324번줄로 교체)
 
 public class CardGame extends GameContainer {
 
@@ -51,10 +51,10 @@ public class CardGame extends GameContainer {
 	Timer timer;
 	java.util.Timer countTimer;
 	int startCount;
-
+	GameHowTo ght = new GameHowTo();
 	public CardGame() {
 		cardBack = new JPanel(new GridLayout(4, 3));
-
+		back = new JLabel(backIcon);
 		// 카드 붙이기
 		for (int i = 0; i < 12; i++) {
 			Btn[i] = new JButton();
@@ -67,13 +67,14 @@ public class CardGame extends GameContainer {
 			Btn[i].setEnabled(false);
 			cardBack.add(Btn[i]);
 		}
-
 		pauseBtn = new JButton(pauseIcon);
 		bottomBtn01 = new RoundJButton("시작하기");
+		
+		back.add(ght);
 
 		pauseBtn.addActionListener(this);
 		bottomBtn01.addActionListener(this);
-
+		
 		gamePlay();
 		mixCard();
 	}
@@ -146,10 +147,9 @@ public class CardGame extends GameContainer {
 			img[random] = temp;
 		}
 	}
-
 	@Override
 	public void gamePlay() {
-
+		
 		xLabel = new JLabel(xIcon);
 		xLabel.setBounds(710, 20, 150, 150);
 		xLabel.setVisible(false);
@@ -187,7 +187,6 @@ public class CardGame extends GameContainer {
 		gameBack.setLayout(null);
 		gameBack.setBounds(220, 50, 570, 650);
 
-		back = new JLabel(backIcon);
 		back.setLayout(null);
 		back.setBounds(0, 0, 1024, 768);
 
